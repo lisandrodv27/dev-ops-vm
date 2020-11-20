@@ -1,0 +1,8 @@
+[jenkins]
+jenkins-vm
+[docker]
+jenkins-vm
+[nginx]
+jenkins-vm
+[pytest]
+jenkins-vm

@@ -1,0 +1,33 @@
+- name: "Update packages"
+  apt:
+    update_cache: "yes"
+    force_apt_get: "yes"
+
+- name: "Install packages"
+  apt:
+    name: "{{ DCKR_PACKAGES }}"
+    state: present
+    force_apt_get: "yes"
+
+- name: "Add docker apt key"
+  apt_key:
+      url: https://download.docker.com/linux/ubuntu/gpg
+      state: present
+
+- name: "Add docker Repository"
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_version.stdout }} stable"
+    state: present
+
+- name: "Add Docker Repository"
+  apt_repository:
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_version.stdout }} stable"
+    state: present
+    
+- name: "Install docker"
+  apt: 
+    name: ["docker-ce", "docker-ce-cli", "containerd.io"]
+    state: latest
+    update_cache: true
+
+    
