@@ -20,7 +20,7 @@ variable "egress_sg_cidr" {
 
 variable "sg_ingress_ports" {
   type = list(number)
-  default = [22, 80, 3306]
+  default = [22, 80, 8080, 3306]
 }
 
 variable "open_access" {

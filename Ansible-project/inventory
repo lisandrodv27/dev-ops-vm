@@ -1,8 +1,7 @@
 [jenkins]
-jenkins-vm
+54.246.41.185
 [docker]
-jenkins-vm
+54.246.41.185
 [nginx]
-jenkins-vm
-[pytest]
-jenkins-vm
+54.246.41.185
+

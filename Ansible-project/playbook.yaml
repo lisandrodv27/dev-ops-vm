@@ -1,7 +1,7 @@
 - hosts: all
   become: true
   roles:
-    - nginx
+    - jenkins
     - role: docker
       vars:
         DCKR_PACKAGES:
@@ -10,5 +10,7 @@
         - curl
         - gnupg-agent
         - software-properties-common
-    - role: jenkins
+    - role: nginx
+      vars: 
+        install_directory: /opt/static-website-example
   # - pytest

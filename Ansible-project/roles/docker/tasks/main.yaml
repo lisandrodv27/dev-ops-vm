@@ -14,14 +14,9 @@
       url: https://download.docker.com/linux/ubuntu/gpg
       state: present
 
-- name: "Add docker Repository"
+- name: "Add docker repository"
   apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_version.stdout }} stable"
-    state: present
-
-- name: "Add Docker Repository"
-  apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ubuntu_version.stdout }} stable"
+    repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable
     state: present
     
 - name: "Install docker"
