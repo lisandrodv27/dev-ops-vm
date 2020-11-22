@@ -10,6 +10,11 @@
         - curl
         - gnupg-agent
         - software-properties-common
+        - python3-pip
+        - virtualenv
+        - python3-pip
+        - mysql-client
+        - jq
     - role: nginx
       vars: 
         install_directory: /opt/static-website-example
