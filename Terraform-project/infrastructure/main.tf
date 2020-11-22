@@ -22,3 +22,10 @@ module "ec2_mod" {
 module "vpc_mod" {
   source = "./vpc"
 }
+
+module "eks_mod" {
+  source = "./eks"
+  eks_sg_id = module.vpc_mod.security_group_id
+  eks_sn_id_pub = module.vpc_mod.public_subnet_id
+  eks_sn_id_priv = module.vpc_mod.private_subnet_id
+}
