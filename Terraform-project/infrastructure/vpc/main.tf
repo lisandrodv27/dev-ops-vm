@@ -10,12 +10,20 @@ resource "aws_subnet" "private_subnet" {
   vpc_id = aws_vpc.main_vpc.id
   cidr_block = var.private_sn_cidr
   availability_zone = "eu-west-1a"
+  map_public_ip_on_launch = true
+  tags = {
+    "kubernetes.io/cluster/eks_cluster" : "shared"
+  }
 }
 
 resource "aws_subnet" "public_subnet" {
   vpc_id = aws_vpc.main_vpc.id
   cidr_block = var.public_sn_cidr
   availability_zone = "eu-west-1b"
+  map_public_ip_on_launch = true
+  tags = {
+    "kubernetes.io/cluster/eks_cluster" : "shared"
+  }
 }
 
 resource "aws_internet_gateway" "igw" {

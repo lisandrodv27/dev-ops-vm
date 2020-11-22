@@ -3,8 +3,8 @@ resource "aws_eks_cluster" "k8s_cluster" {
   role_arn = var.eks_cluster_arn
 
   vpc_config {
-      security_group_ids = []
-      subnet_ids = [var.eks_sn_id_pub, var.eks_sn_id_priv] 
+    security_group_ids = [var.eks_sg_id]
+    subnet_ids = [var.eks_sn_id_pub, var.eks_sn_id_priv] 
   }
 
   version = "1.17"

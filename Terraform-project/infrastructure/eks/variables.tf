@@ -16,7 +16,7 @@ variable "eks_sn_id_priv" {
 }
 
 variable "ami_type" {
-    default = "AL2_ARM_64"
+    default = "AL2_x86_64"
 }
 
 variable "instance_type" {

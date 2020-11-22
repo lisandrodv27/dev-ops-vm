@@ -15,7 +15,10 @@
         - python3-pip
         - mysql-client
         - jq
-    - role: nginx
-      vars: 
-        install_directory: /opt/static-website-example
-  # - pytest
+    - role: k8s
+      vars:
+        packages:
+          - kubelet 
+          - kubeadm 
+          - kubectl
+    - role: awscli

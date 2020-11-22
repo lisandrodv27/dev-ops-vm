@@ -1,0 +1,2 @@
+- name: "Run AWS CLI install script"
+  script: "~/devops-project/Ansible-project/roles/awscli/tasks/awscli-install.sh"  
