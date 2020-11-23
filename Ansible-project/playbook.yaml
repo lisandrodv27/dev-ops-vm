@@ -22,3 +22,5 @@
           - kubeadm 
           - kubectl
     - role: awscli
+    - role: mysql
+    - role: pytest
